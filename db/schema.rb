@@ -10,20 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_27_025119) do
+ActiveRecord::Schema.define(version: 2022_12_27_225728) do
 
   create_table "plants", force: :cascade do |t|
     t.string "plant_name"
-    t.string "directions"
+    t.string "plant_nickname"
+    t.string "plant_image_url"
+    t.string "environment"
+    t.string "water_level"
+    t.string "sunlight_hours"
+    t.string "plant_description"
     t.integer "user_id"
-    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.integer "years_of_experience"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "user_full_name"
+    t.string "username"
+    t.string "user_image_url"
+    t.string "years_of_experience"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
